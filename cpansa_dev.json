@@ -1,0 +1,47 @@
+{
+    "SOAP-Lite": [
+        {
+            "reported": "2015-07-21",
+            "cpansa_id": "CPANSA-SOAP-Lite-2015-01",
+            "affected_versions": "<1.15",
+            "cves": [
+                "CVE-2015-8978"
+            ],
+            "severity": null,
+            "description": "An example attack consists of defining 10 or more XML entities, each defined as consisting of 10 of the previous entity, with the document consisting of a single instance of the largest entity, which expands to one billion copies of the first entity. The amount of computer memory used for handling an external SOAP call would likely exceed that available to the process parsing the XML.\n",
+            "references": [
+                "https://metacpan.org/changes/distribution/SOAP-Lite",
+                "https://www.securityfocus.com/bid/94487",
+                "https://github.com/redhotpenguin/perl-soaplite/commit/6942fe0d281be1c32c5117605f9c4e8d44f51124"
+            ]
+        },
+        {
+            "severity": "high",
+            "cves": [
+                "CVE-2002-1742",
+                "CVE-2015-8978"
+            ],
+            "references": [
+                "https://metacpan.org/changes/distribution/SOAP-Lite"
+            ],
+            "description": "Allows remote attackers to load arbitrary Perl functions by suppling a non-existent function in a script using a SOAP::Lite module, which causes the AUTOLOAD subroutine to trigger.\n",
+            "reported": "2002-04-08",
+            "cpansa_id": "CPANSA-SOAP-Lite-2002-01",
+            "affected_versions": "0.55"
+        }
+    ],
+    "Net-SSLeay": [
+        {
+            "references": [
+                "http://secunia.com/advisories/18639",
+                "http://www.securityfocus.com/bid/13471"
+            ],
+            "description": "SSLeay.pm in libnet-ssleay-perl before 1.25 uses the /tmp/entropy file for entropy if a source is not set in the EGD_PATH variable, which allows local users to reduce the cryptographic strength of certain operations by modifying the file.\n",
+            "cves": null,
+            "severity": null,
+            "affected_versions": ">=1.25,<2.3.9",
+            "cpansa_id": "CPANSA-Net-SSLeay-2005-0106",
+            "reported": "2005-05-03"
+        }
+    ]
+}
