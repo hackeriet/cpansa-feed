@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hackeriet.github.io/cpansa-feed/v1/schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^[A-Za-z0-9]+$": {
+      "description": "distribution name to an array of report data",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["affected_versions", "cpansa_id"],
+        "properties": {
+          "affected_versions": {
+            "type": "string"
+          },
+          "cves": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "references": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "reported": {
+            "type": "string",
+            "format": "date"
+          },
+          "severity": {
+            "enum": ["moderate","high"]
+          }
+        }
+      }
+    }
+  }
+}
