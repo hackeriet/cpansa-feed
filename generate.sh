@@ -8,4 +8,4 @@ perl -V > _site/index.html
 date >> _site/index.html
 
 #perl generate-cpansa-data.pl > _site/cpansa.json
-cp -p cpansa-patched.json > _site/cpansa.json
+cp -p cpansa-patched.json _site/cpansa.json
