@@ -1,6 +1,8 @@
 name: linux
 
 on:
+  schedule:
+    - cron: "*/60 * * * *"
   push:
     branches: ["main"]
   # Allows you to run this workflow manually from the Actions tab
