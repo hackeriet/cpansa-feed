@@ -10,7 +10,14 @@ set -ex
 ## depending on it being released on CPAN
 ##
 cpanm -n --installdeps CPAN::Audit
+
+# for util/generate
 cpanm -n YAML::Tiny Mojolicious
+
+# for generate-cpansa-data.pl
+cpanm -n JSON::MaybeXS JSON::Schema::Modern Path::Tiny
+
+
 mkdir -p /app
 cd /app
 git clone https://github.com/briandfoy/cpan-audit
