@@ -2,7 +2,7 @@ use 5.36.0;
 use warnings;
 
 use JSON::Schema::Modern;
-use JSON::MaybeXS qw( encode_json decode_json );
+use JSON::MaybeXS;
 use Path::Tiny;
 use CPAN::Audit::DB;
 
@@ -24,15 +24,19 @@ foreach my $dist (keys $db->{dists}->%*) {
 }
 
 
+my $json = JSON::MaybeXS->new(canonical => 1);
 my $js = JSON::Schema::Modern->new(validate_formats => 1);
-my $schema = decode_json(path("schema.json")->slurp_raw);
+my $schema = $json->decode(path("schema.json")->slurp_raw);
 my $schema_id = $schema->{'$id'};
 $js->add_schema($schema);
 
 my $result = $js->evaluate($schema_id, $feed);
+
+
+
 if ($result) {
-  print encode_json($feed);
+  print $json->encode($feed);
 }
 else {
-  die encode_json($result);
+  die $json->encode($result);
 }
