@@ -3,7 +3,8 @@
         {
             "reported": "2015-07-21",
             "cpansa_id": "CPANSA-SOAP-Lite-2015-01",
-            "affected_versions": "<1.15",
+            "affected_versions":
+              - "<1.15",
             "cves": [
                 "CVE-2015-8978"
             ],
@@ -27,7 +28,8 @@
             "description": "Allows remote attackers to load arbitrary Perl functions by suppling a non-existent function in a script using a SOAP::Lite module, which causes the AUTOLOAD subroutine to trigger.\n",
             "reported": "2002-04-08",
             "cpansa_id": "CPANSA-SOAP-Lite-2002-01",
-            "affected_versions": "0.55"
+            "affected_versions":
+              - "0.55"
         }
     ],
     "Net-SSLeay": [
@@ -39,7 +41,8 @@
             "description": "SSLeay.pm in libnet-ssleay-perl before 1.25 uses the /tmp/entropy file for entropy if a source is not set in the EGD_PATH variable, which allows local users to reduce the cryptographic strength of certain operations by modifying the file.\n",
             "cves": null,
             "severity": null,
-            "affected_versions": ">=1.25,<2.3.9",
+            "affected_versions":
+              - ">=1.25,<2.3.9",
             "cpansa_id": "CPANSA-Net-SSLeay-2005-0106",
             "reported": "2005-05-03"
         }
