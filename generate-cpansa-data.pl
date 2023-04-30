@@ -7,12 +7,11 @@ use Path::Tiny;
 use CPAN::Audit::DB;
 use List::Util qw( any all );
 
-my $feed = {};
-
 run();
 exit;
 
 sub run {
+  my $feed = {};
   my $db = CPAN::Audit::DB->db();
   foreach my $dist (keys $db->{dists}->%*) {
     foreach my $report ($db->{dists}{$dist}{advisories}->@*) {
@@ -31,7 +30,6 @@ sub run {
       }
     }
   }
-
 
   my $json = JSON::MaybeXS->new(canonical => 1);
   my $js = JSON::Schema::Modern->new(validate_formats => 1);
