@@ -1,8 +1,8 @@
-name: linux
+name: update-cpansa-json
 
 on:
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "0 * * * *"
   push:
     branches: ["main"]
   # Allows you to run this workflow manually from the Actions tab
